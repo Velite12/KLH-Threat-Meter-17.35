@@ -859,6 +859,8 @@ CastSpellByName = me.newcastspellbyname
 --------------------------------------------------------------------------
 --					Handling Greater Blessing of Kings					--
 --------------------------------------------------------------------------
+-- Created by Laughadin of Turtle-WoW
+-- Please contact Velite#7170 on discord if you have any feedback!
 
 
 --[[
@@ -875,7 +877,7 @@ me.addgbokthreat = function(target)
 	
 	local numclass=0 
 	for r=1,GetNumRaidMembers() do 
-		if (UnitClass("raid"..r) == UnitClass(target) and UnitIsConnected("raid"..r) and not UnitIsDead("raid"..r)) then 
+		if (UnitClass("raid"..r) == UnitClass(target) and UnitIsConnected("raid"..r) and not UnitIsDead("raid"..r) and UnitIsVisible("raid"..r) and UnitAffectingCombat("raid"..r)) then 
 			numclass = numclass+1
 		end 
 	end
